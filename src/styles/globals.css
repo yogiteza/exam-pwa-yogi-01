@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    body {
+        @apply text-base leading-base text-neutral
+    }
+}
+
+@layer components {
+    .prose {
+        @apply text-base leading-base text-neutral max-w-none
+    }
+
+    .prose > p > a {
+        @apply font-normal text-base leading-base text-neutral
+    }
+
+    .prose a :where(img):not(:where([class~="not-prose"],[class~="not-prose"])) {
+        @apply m-0 inline-block
+    }
+}
+
+/* Google maps style required */
+.pac-container {
+    z-index: 1300;
+    border: 1px solid #f0f0f0;
+    background: #ffffff;
+    box-shadow: none;
+}
+
+/* Tweak accordion on safari */
+summary::-webkit-details-marker { 
+    display: none; 
+}
+
+
+
+.swift-catalog-item-product:first-child {
+    @apply !ml-0;
+}
+
+
+.homepage-custom.banner-slider--rounded .slick-slide {
+    @apply rounded-xl overflow-hidden;
+} 
+.homepage-custom.banner-slider--dots-hidden .magezon-slider--dot-nav {
+    @apply hidden;
+}
+
+.homepage-custom.category-list {
+    .mgz-row > div:nth-child(5), .mgz-row > div:nth-child(6) {
+        @apply hidden lg:block;
+    }
+    .mgz-row > div {
+        @apply flex-1 basis-1/2 md:basis-1/4 lg:basis-1/6;
+
+        .image-container, img {
+            @apply !w-full;
+        }
+    }
+}
+
+.homepage-custom.desktop-image-grid {
+    @apply hidden md:block;
+}
+.homepage-custom.mobile-image-grid {
+    @apply block md:hidden;
+}
+
+.homepage-custom.desktop-image-grid.grid-one-two > div > div > div.mgz-row > div:first-child,
+.homepage-custom.desktop-image-grid.grid-two-one > div > div > div.mgz-row > div:last-child {
+    @apply flex-[934];
+}
+.homepage-custom.desktop-image-grid.grid-one-two > div > div > div.mgz-row > div:last-child,
+.homepage-custom.desktop-image-grid.grid-two-one > div > div > div.mgz-row > div:first-child {
+    @apply flex-[248];
+}
+.homepage-custom.desktop-image-grid.grid-two-one > div > div > div.mgz-row > div:last-child .image-container {
+    @apply ml-auto;
+}
+
+.homepage-custom.mobile-image-grid.grid-one-two > div > div > div.mgz-row > div > div:last-child > div > div  {
+    @apply px-0;
+
+    > div {
+        @apply flex-nowrap;
+    } 
+}
+
+.homepage-custom.mobile-image-grid.grid-two-one > div > div > div.mgz-row > div > div:first-child > div > div {
+    @apply px-0;
+
+    > div {
+        @apply flex-nowrap;
+    } 
+}
